@@ -1,6 +1,9 @@
 """
 Vision Bridge MCP Server — Kimi via Anthropic-compatible endpoint
 Sends images through Moonshot's Anthropic Messages API, returns text.
+
+当前仅支持 Kimi 视觉模型（通过 Moonshot 平台）。
+不支持 GPT-4o / Gemini / Claude Vision 等其他模型。
 """
 import base64
 import os

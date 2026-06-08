@@ -4,6 +4,8 @@
 
 **Vision Bridge** 是一个 MCP (Model Context Protocol) 服务器，它让 Claude Code 能够"看见"并理解图片 —— 截图、图表、照片、UI 界面、错误弹窗、游戏画面等等。
 
+> ⚠️ **当前仅支持 Kimi 视觉模型**（通过 Moonshot Anthropic 兼容端点）。暂不支持 GPT-4o / Gemini / Claude Vision 等其他模型。详见下方 [模型兼容性](#模型兼容性)。
+
 ## 🎯 它能做什么
 
 | 场景 | 示例 |
@@ -32,6 +34,35 @@
 - Kimi 的 Anthropic 兼容端点 → 可直接用 `anthropic` Python SDK
 - 中文理解能力强，适合中文用户
 - 价格实惠，Moonshot 平台注册即可使用
+
+## 🧠 模型兼容性
+
+### 当前支持
+
+| 模型 | 状态 | 提供商 | 端点 |
+|------|------|--------|------|
+| **Kimi K2.6** | ✅ 默认 | Moonshot | `api.moonshot.cn/anthropic` |
+
+### 为什么不支持其他模型？
+
+本项目利用的是 Kimi 的 **Anthropic 兼容端点** —— 它允许直接用 `anthropic` Python SDK 调用 Kimi 模型，无需额外适配层。
+
+| 模型 | 能否支持 | 原因 |
+|------|----------|------|
+| GPT-4o / GPT-4V | ❌ 不支持 | OpenAI 格式，需 `openai` SDK 重写 |
+| Gemini 2.5 Pro | ❌ 不支持 | Google 格式，需另写适配 |
+| Claude Vision | ❌ 不支持 | Anthropic 原生 Vision API 价格高，且 Claude Code 已有内置图像能力 |
+| 其他 Kimi 模型 | 🟡 理论支持 | 可在 `env` 中设置 `VISION_MODEL` 切换，参考 [Moonshot 文档](https://platform.moonshot.cn/docs) |
+
+### 未来计划
+
+- [ ] 支持 OpenAI 兼容端点（GPT-4o 等）
+- [ ] 支持自定义端点 URL（自部署模型）
+- [ ] 多模型自动 fallback
+
+> 💡 **欢迎 PR！** `server.py` 不到 100 行，添加新模型支持只需新增一个 client 分支。
+
+---
 
 ## 📋 前置条件
 
