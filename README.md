@@ -1,8 +1,8 @@
-# Vision Bridge MCP Server 🔍
+# kimi-vision-mcp 🔍
 
 > 让 Claude Code 拥有视觉能力 —— 通过 Kimi Vision API 理解图片内容
 
-**Vision Bridge** 是一个 MCP (Model Context Protocol) 服务器，它让 Claude Code 能够"看见"并理解图片 —— 截图、图表、照片、UI 界面、错误弹窗、游戏画面等等。
+**kimi-vision-mcp** 是一个 MCP (Model Context Protocol) 服务器，它让 Claude Code 能够"看见"并理解图片 —— 截图、图表、照片、UI 界面、错误弹窗、游戏画面等等。
 
 > ⚠️ **当前仅支持 Kimi 视觉模型**（通过 Moonshot Anthropic 兼容端点）。暂不支持 GPT-4o / Gemini / Claude Vision 等其他模型。详见下方 [模型兼容性](#模型兼容性)。
 
@@ -88,8 +88,8 @@ python --version  # 应该 >= 3.10
 ### 步骤 1：克隆仓库
 
 ```bash
-git clone https://github.com/ShaLuuFPS/vision-bridge.git
-cd vision-bridge
+git clone https://github.com/ShaLuuFPS/kimi-vision-mcp.git
+cd kimi-vision-mcp
 ```
 
 ### 步骤 2：安装依赖
